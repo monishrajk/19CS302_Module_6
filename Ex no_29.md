@@ -1,49 +1,49 @@
-# EX 29 C program to multiply two integer  numbers using pointers in which memory allocated using calloc(). 
+# EX 30 C program to add three integer elements in an array using realloc() and that array already has four elements.
 ## DATE:
 ## AIM:
-To write a C program to multiply two integer  numbers using pointers in which memory allocated using calloc(). .
+To write a C program to add three integer elements in an array using realloc() and that array already has four elements.
 
 ## Algorithm
 
-1.Start the program and allocate memory for two integers using calloc().
+1.Start the program and allocate memory for an array of 4 integers using malloc().
 
-2.Declare a variable s = 1 and a pointer res to store the result.
+2.Initialize the first four elements of the array.
 
-3.Read two integer values from the user using pointer notation.
+3.Use realloc() to resize the array to hold 7 elements.
 
-4.Multiply the two values by accessing them through the pointer and store the result in s.
+4.Add three more integer elements to the resized array.
 
-5.Display the result, free the allocated memory, and stop the program. 
+5.Display all the elements of the array and stop the program.
 
 ## Program:
 ```
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 int main()
 {
-  int s=1,*ptr;
-  ptr = (int *)calloc(2,sizeof(int));
-  int*res=&s;
-  for(int i=0;i<2;i++)
-  {
-  
-  scanf("%d",ptr+i);
-  }
-  
-   for(int i=0;i<2;i++)
-  {
-  s=s*(*(ptr+i));
-  }
-  
-  printf("The result is %d ",*res);
-  free(ptr);
-  return 0;
+    int *p,*np;
+    p=(int*)malloc(7*sizeof(int));
+    p[0]=1;
+    p[1]=2;
+    p[2]=3;
+    p[3]=4;
+    
+    np=(int*)realloc(p,sizeof(int));
+    np[4]=12;
+    np[5]=10;
+    np[6]=8;
+    
+    for(int i=0;i<7;i++)
+    {
+        printf("%d ",np[i]);
+    }
+    
 }
 ```
 
 ## Output:
 
-<img width="438" height="256" alt="Screenshot 2026-03-19 155218" src="https://github.com/user-attachments/assets/64034991-d37b-4323-b6bd-0567c0b84b94" />
+<img width="372" height="125" alt="Screenshot 2026-03-19 154922" src="https://github.com/user-attachments/assets/d6cccd52-adcb-4f6e-8c12-d8075f6dfc05" />
 
 
 ## Result:
